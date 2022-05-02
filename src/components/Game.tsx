@@ -156,7 +156,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
             hideImageMode && !gameEnded ? "h-0" : "h-full"
           }`}
           alt="country to guess"
-          src={`images/countries/${country?.code.toLowerCase()}/vector.svg`}
+          src={settingsData.theme == "light" ? `images/countries/${country?.code.toLowerCase()}/vector.png`: `images/countries_inv/${country?.code.toLowerCase()}/vector.png`}
           style={
             rotationMode && !gameEnded
               ? {

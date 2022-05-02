@@ -22,8 +22,10 @@ const forcedCountries: Record<string, string> = {
 const noRepeatStartDate = DateTime.fromFormat("2022-05-01", "yyyy-MM-dd");
 
 export function getDayString(shiftDayCount?: number) {
+  const numb = Math.floor(seedrandom.alea(DateTime.now().toFormat("yyyy-MM-dd"))()*300); 
+  console.log(numb);
   return DateTime.now()
-    .plus({ days: shiftDayCount ?? 0 })
+    .plus({ days: numb + (shiftDayCount ?? 0) })
     .toFormat("yyyy-MM-dd");
 }
 
